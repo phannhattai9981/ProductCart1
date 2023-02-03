@@ -87,7 +87,7 @@
                             </tbody>
                         </table>
                         <hr />
-                        <a class="btn btn-primary" href="/TamNgo_BTT_Bai2/">Add
+                        <a class="btn btn-primary" href="/product/">Add
                             more</a>
                     </div>
                 </div>

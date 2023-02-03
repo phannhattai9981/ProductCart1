@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
-public class Order {
+@Table(name = "orders")
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -28,7 +28,7 @@ public class Order {
     @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderDetails> orderDetails;
 
-    public Order() {
+    public Orders() {
     }
 
     public int getId() {

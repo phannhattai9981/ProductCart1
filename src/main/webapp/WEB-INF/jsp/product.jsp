@@ -5,17 +5,12 @@
 <html>
 
 <head>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href='<c:url value="/resources/css/delete.css" />' rel='stylesheet'>
-    <script type="text/javascript" src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.js" />
-    </script>
-    <link href='<c:url value="/resources/images/logocat.png" />' rel='icon'>
-    <title>Product</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <jsp:include page="header.jsp" />
 
@@ -23,14 +18,6 @@
     <div class="container" style="margin-top: 20px;">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6">
-                <form:form action="search" method="get">
-                    <div class="input-group">
-                        <input name="searchInput" type="text" class="form-control" placeholder="Search by name..." />
-                        <span class="input-group-btn">
-                            <button class="btn btn-outline-primary" style="height: 38px; type=" submit">Search</button>
-                        </span>
-                    </div>
-                </form:form>
             </div>
         </div>
         <div class="footter" style="width: 100%;display: flex; justify-content: left;">
@@ -84,34 +71,14 @@
                                 <td style="padding-top:20px;">${product.name}</td>
                                 <td style="padding-top:20px;">${product.price}</td>
                                 <td>
-                                    <a class="btn btn-info" href="#addToCart${product.id}" class="trigger-btn"
-                                        style="color:white;" data-toggle="modal">Add to
-                                        Cart</a>
-                                    <div id="addToCart${product.id}" class="modal fade">
-                                        <div class="modal-dialog modal-confirm">
-                                            <div class="modal-content">
-                                                <div class="modal-header flex-column">
-                                                    <div class="icon-box">
-                                                        <i class="fal fa-times">&#129728;</i>
-                                                    </div>
-                                                    <h4 class="modal-title w-100">Are you sure?</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">&times;</button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Do you want to add "${product.name}" to cart?</p>
-                                                </div>
-                                                <div class="modal-footer justify-content-center">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-info"
-                                                        onclick="location.href='cart/add/${product.id}'">Add</button>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                                         <button type="button" onclick="location.href='cart/add/${product.id}'"
+                                         class="btn btn-outline-primary">Add To Cart</button>
+
                                     </div>
         </div>
-        <a class="btn btn-warning" href="#edit${product.id}" class="trigger-btn" data-toggle="modal">Edit</a>
+
+        <button type="button" href="#edit${product.id}" class="btn btn-outline-warning" data-toggle="modal">Edit</button>
         <div class="modal fade" id="edit${product.id}">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -148,32 +115,10 @@
                 </div>
             </div>
         </div>
-        <a class="btn btn-danger" href="#myModalDelete${product.id}" class="trigger-btn" data-toggle="modal"
-            data-name="${product.id}?">Delete</a>
+
+            <button type="button"  onclick="location.href='delete/${product.id}'" data-toggle="modal" class="btn btn-outline-danger"  data-name="${product.id}?">Delete</button>
         </td>
-        <div id="myModalDelete${product.id}" class="modal fade">
-            <div class="modal-dialog modal-confirm">
-                <div class="modal-content">
-                    <div class="modal-header flex-column">
-                        <div class="icon-box">
-                            <i class="fal fa-times">&#9749;</i>
-                        </div>
-                        <h4 class="modal-title w-100">Are you sure?</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Do you really want to delete product "${product.name}"? This process
-                            cannot
-                            be undone.</p>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger"
-                            onclick="location.href='delete/${product.id}'">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         </tr>
         </c:forEach>
         </tbody>
@@ -182,7 +127,7 @@
         <c:if test="${productList.size() == 0}">
             <br>
             <div class="alert alert-warning">
-                There is no data, please search again with new keyword... Love <3 </div>
+                There is no data </div>
         </c:if>
     </div>
 </body>

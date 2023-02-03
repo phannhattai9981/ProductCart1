@@ -28,8 +28,7 @@
 
     <div class="container">
         <h2 style="margin-top: 20px;">Your Cart Item</h2>
-        <h6 style="opacity: 0.4; color: black; margin-bottom: 20px;">Please Check Carefully Before Complete Your
-            Order!</h6>
+
         <div class="col-xs-12 col-sm-12 col-md-10">
             <c:if test="${not empty cartItem}">
                 <div class="rows">
@@ -57,29 +56,10 @@
                                             <td><input name="quantity" value="${item.quantity}"
                                                     onblur="this.form.submit()" style="width: 50px;"></td>
                                             <td>${item.product.price * item.quantity}</td>
-                                            <td><a class="btn btn-primary btn-sm" href="#delCart${item.product.id}"
+                                            <td><a class="btn btn-primary btn-sm" onclick="location.href='cart/remove/${item.product.id}'"
                                                     class="trigger-btn" data-toggle="modal">Remove</a></td>
 
-                                            <div id="delCart${item.product.id}" class="modal fade">
-                                                <div class="modal-dialog modal-confirm">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header flex-column">
-                                                            <div class="icon-box">
-                                                                <i class="fal fa-times">&#129409;</i>
-                                                            </div>
-                                                            <h4 class="modal-title w-100">Delete Order?</h4>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-hidden="true">&times;</button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Do you want to delete item "${item.product.name}"?</p>
-                                                        </div>
-                                                        <div class="modal-footer justify-content-center">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Cancel</button>
-                                                            <button type="button" class="btn btn-danger"
-                                                                onclick="location.href='cart/remove/${item.product.id}'">Delete</button>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,11 +75,10 @@
                         </div>
                         <hr />
                         <a class="btn btn-primary" href="cart/clear">Clear All
-                            Cart</a> <a class="btn btn-primary" href="">Add
+                            Cart</a> <a class="btn btn-primary" href="/product/">Add
                             more</a>
                             <a class="btn btn-info" style="color: white;" href="cart/checkout" >Check Out</a>
-                        <a class="btn btn-info" style="color: white;" href="#checkOut" class="trigger-btn"
-                            data-toggle="modal">Check Out</a>
+
 
                         <div class="modal fade" id="checkOut">
                             <div class="modal-dialog">
@@ -145,7 +124,7 @@
             <c:if test="${cartItem.size() == 0}">
                 <br>
                 <div class="alert alert-warning">
-                    There is no data, please search again with new keyword... Love <3 </div>
+                    There is no data </div>
             </c:if>
         </div>
 </body>

@@ -5,22 +5,12 @@
 <html>
 
 <head>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href='<c:url value="/resources/css/main.css" />' rel='stylesheet'>
-    <link href='<c:url value="/resources/css/delete.css" />' rel='stylesheet'>
-    <script type="text/javascript" src="/resources/js/time.js"></script>
-    <link href='<c:url value="/resources/images/logocat.png" />' rel='icon'>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.js" />
-    </script>
-    <script type="text/javascript" src="webjars/popper.js/2.9.3/umd/popper.min.js" />
-    </script>
-    <title>index</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <jsp:include page="header.jsp" />
 

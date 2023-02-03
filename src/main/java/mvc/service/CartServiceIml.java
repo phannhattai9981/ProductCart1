@@ -1,11 +1,15 @@
 package mvc.service;
 
 import mvc.entity.Cart;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
+@Service
+@SessionScope
 public class CartServiceIml implements CartService {
     Map<Integer, Cart> map = new HashMap<>();
     @Override

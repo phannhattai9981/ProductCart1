@@ -5,20 +5,12 @@
 <html>
 
 <head>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href='<c:url value="/resources/css/main.css" />' rel='stylesheet'>
-    <link href='<c:url value="/resources/css/delete.css" />' rel='stylesheet'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.js" />
-    </script>
-    <script type="text/javascript" src="webjars/popper.js/2.9.3/umd/popper.min.js" />
-    </script>
-    <link href='<c:url value="/resources/images/tamlogo.png" />' rel='icon'>
-    <title>Order</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <jsp:include page="header.jsp" />
 
@@ -47,34 +39,11 @@
                                     <td>
                                         <button class="btn btn-sm btn-primary"
                                             onclick="location.href='cart/view_orderId=${order.id}'">View</button>
-                                        <a class="btn btn-sm btn-danger" href="#modalDelete${order.id}"
+                                        <a class="btn btn-sm btn-danger"  onclick="location.href='orderlist/delete/${order.id}'"
                                             class="trigger-btn" data-toggle="modal" data-id="${order.id}?">Delete</a>
                                     </td>
 
-                                    <div id="modalDelete${order.id}" class="modal fade">
-                                        <div class="modal-dialog modal-confirm">
-                                            <div class="modal-content">
-                                                <div class="modal-header flex-column">
-                                                    <div class="icon-box">
-                                                        <i class="fal fa-times">&#129409;</i>
-                                                    </div>
-                                                    <h4 class="modal-title w-100">Delete Order?</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">&times;</button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Do you really want to delete this order of
-                                                        "${order.customerName}"?</p>
-                                                </div>
-                                                <div class="modal-footer justify-content-center">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-danger"
-                                                        onclick="location.href='orderlist/delete/${order.id}'">Delete</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </tr>
                             </c:forEach>
                         </tbody>
@@ -83,7 +52,7 @@
                 <c:if test="${orderList.size() == 0}">
                     <br>
                     <div class="alert alert-warning">
-                        There is no data, please search again with new keyword... Love <3 </div>
+                        There is no data </div>
                 </c:if>
             </div>
         </c:if>

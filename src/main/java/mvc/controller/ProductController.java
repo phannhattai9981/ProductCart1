@@ -45,7 +45,6 @@ public class ProductController {
         return "redirect:/";
     }
 
-    //
     @RequestMapping(value = "/edit/updateProduct/{id}", method = RequestMethod.POST)
     public String updateProduct(Model model, @PathVariable int id,
                                 @RequestParam("newName") String name,

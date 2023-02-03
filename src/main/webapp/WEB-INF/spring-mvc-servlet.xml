@@ -9,14 +9,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
-http://www.springframework.org/schema/mvc ">
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<context:component-scan base-package="mvc"/>
+	<mvc:resources mapping="/webjars/**" location="/webjars/"/>
+	<mvc:resources mapping="/resources/**" location="/resources/"/>
 	<bean
 			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/WEB-INF/views/jsp/</value>
+			<value>/WEB-INF/jsp/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>
@@ -24,5 +25,5 @@ http://www.springframework.org/schema/mvc ">
 	</bean>
 	<mvc:annotation-driven/>
 	<mvc:default-servlet-handler/>
-
+	<mvc:resources mapping="/webapp/resources/**" location="/webapp/resources/" />
 </beans>
